@@ -41,3 +41,4 @@ The smoke run is a learning-system test rather than a strength claim. It checks 
 ## Prior baseline
 
 The retired prototype completed two 9x9 runs on a single debug node. The first completed 1,234 games but collapsed to early passing. The second used an early-pass guard and reached 12/50 wins against random. The new smoke run checks whether all 64 logical cores can produce a synchronized learning curve.
+
