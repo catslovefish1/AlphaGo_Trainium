@@ -1,0 +1,11 @@
+{
+  "device": "xla",
+  "size": 9,
+  "komi": 7.0,
+  "max_moves": 162,
+  "min_moves_before_pass": 30,
+  "channels": 64,
+  "blocks": 6,
+  "sims": 32,
+  "cpuct": 1.5
+}

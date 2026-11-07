@@ -1,6 +1,9 @@
-"""Minimal GTP adapter for smoke-test protocol checks."""
+"""GTP adapter with optional checkpoint-backed MCTS play."""
 
+import argparse
+import json
 import sys
+from pathlib import Path
 
 from .go import BLACK, WHITE, Rules
 
@@ -26,10 +29,13 @@ def format_vertex(move, size):
 
 
 class GtpSession:
-    def __init__(self, size=9, komi=7.0):
+    def __init__(self, size=9, komi=7.0, model=None, device=None, search_cfg=None):
         self.rules = Rules(size=size, komi=komi)
         self.state = self.rules.initial()
         self.history = []
+        self.model = model
+        self.device = device
+        self.search_cfg = search_cfg or {"sims": 32, "cpuct": 1.5}
 
     def command(self, line):
         parts = line.strip().split()
@@ -64,7 +70,20 @@ class GtpSession:
             self.state = self.state.play(parse_vertex(args[1], self.rules.size))
             return ""
         if name == "genmove":
-            move = self.state.legal_moves()[0]
+            if self.model is None:
+                move = self.state.legal_moves()[0]
+            else:
+                from .arena import choose_mcts_move
+
+                import random
+
+                move = choose_mcts_move(
+                    self.model,
+                    self.device,
+                    self.state,
+                    self.search_cfg,
+                    random.Random(self.state.moves),
+                )
             self.history.append(self.state)
             self.state = self.state.play(move)
             return format_vertex(move, self.rules.size)
@@ -82,7 +101,36 @@ class GtpSession:
 
 
 def main():
-    session = GtpSession()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--checkpoint")
+    parser.add_argument("--config")
+    parser.add_argument("--device", choices=("cpu", "xla"), default="cpu")
+    args = parser.parse_args()
+    model = None
+    device = None
+    search_cfg = None
+    if args.checkpoint:
+        if not args.config:
+            raise ValueError("--config is required with --checkpoint")
+        import torch
+
+        from .arena import _load_settings, load_checkpoint_model
+
+        config = _load_settings(args.config)
+        device = torch.device("cpu")
+        if args.device == "xla":
+            import torch_xla.core.xla_model as xm
+
+            device = xm.xla_device()
+        model = load_checkpoint_model(
+            args.checkpoint,
+            config["size"],
+            config["channels"],
+            config["blocks"],
+            device,
+        )
+        search_cfg = config
+    session = GtpSession(model=model, device=device, search_cfg=search_cfg)
     for line in sys.stdin:
         try:
             response = session.command(line)

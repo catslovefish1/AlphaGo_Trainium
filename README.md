@@ -67,6 +67,30 @@ The primary fresh-seed result is summarized in
 resume diagnostic is summarized in
 [`docs/resume_v1d_report.md`](docs/resume_v1d_report.md).
 
+## Checkpoint-backed strength evaluation
+
+The arena loads a rank-0 checkpoint, runs MCTS with network policy and value
+outputs, and plays against a random opponent or another checkpoint. It uses a
+single logical NeuronCore for evaluation so the full node remains available
+for training jobs.
+
+```bash
+scripts/stage_arena_and_submit.sh trn09 configs/go9_arena.json \
+  /home/ralph/zhiwei_wang/AlphaGo_Trainium/runs/16535/go9_fromscratch_v2/checkpoint_030.pt \
+  00:10:00 go9_arena random
+```
+
+The same checkpoint-backed model is available through the GTP adapter.
+
+```bash
+python -m alphago.gtp --checkpoint <checkpoint> --config configs/go9_arena.json --device xla
+```
+
+For an external reference, `alphago.gtp_match` alternates colors and drives
+both engines through GTP. Set the external engine command to a fixed KataGo or
+GNU Go configuration with the same board size, komi, rules, and search budget.
+The match output records wins by engine and game lengths.
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.
