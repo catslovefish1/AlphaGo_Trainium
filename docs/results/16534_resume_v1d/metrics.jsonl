@@ -1,0 +1,13 @@
+{"iteration": 22, "world": 64, "games_global": 79, "replay_global": 6784, "policy_loss": 3.921875, "value_loss": 0.1328125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 12.555762767791748}
+{"iteration": 23, "world": 64, "games_global": 92, "replay_global": 10560, "policy_loss": 3.9375, "value_loss": 0.18359375, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 19.982182502746582}
+{"iteration": 24, "world": 64, "games_global": 83, "replay_global": 14080, "policy_loss": 3.890625, "value_loss": 0.3125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 27.543450355529785}
+{"iteration": 25, "world": 64, "games_global": 94, "replay_global": 17920, "policy_loss": 3.875, "value_loss": 0.302734375, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 34.650792360305786}
+{"iteration": 26, "world": 64, "games_global": 84, "replay_global": 21504, "policy_loss": 3.875, "value_loss": 0.265625, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 42.06600308418274}
+{"iteration": 27, "world": 64, "games_global": 78, "replay_global": 24832, "policy_loss": 3.859375, "value_loss": 0.236328125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 49.52256536483765}
+{"iteration": 28, "world": 64, "games_global": 82, "replay_global": 28288, "policy_loss": 3.859375, "value_loss": 0.205078125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 57.40281844139099}
+{"iteration": 29, "world": 64, "games_global": 91, "replay_global": 32128, "policy_loss": 3.828125, "value_loss": 0.1845703125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 64.83339762687683}
+{"iteration": 30, "world": 64, "games_global": 87, "replay_global": 35840, "policy_loss": 3.84375, "value_loss": 0.1650390625, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 72.40855145454407}
+{"iteration": 31, "world": 64, "games_global": 89, "replay_global": 39680, "policy_loss": 3.84375, "value_loss": 0.1533203125, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 79.95525097846985}
+{"iteration": 32, "world": 64, "games_global": 88, "replay_global": 43264, "policy_loss": 3.828125, "value_loss": 0.154296875, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 87.60026168823242}
+{"iteration": 33, "world": 64, "games_global": 96, "replay_global": 47616, "policy_loss": 3.84375, "value_loss": 0.154296875, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 94.97951078414917}
+{"iteration": 34, "world": 64, "games_global": 96, "replay_global": 51456, "policy_loss": 3.84375, "value_loss": 0.1494140625, "random_wins_as_black": 0, "random_games": 512, "elapsed_s": 102.70721220970154}
