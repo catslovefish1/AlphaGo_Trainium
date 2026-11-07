@@ -65,6 +65,23 @@ def measure_transfer(runtime, steps, warmup, batch_size, size, rank):
     return summarize(samples)
 
 
+def measure_device_to_host(runtime, steps, warmup, batch_size, size, rank):
+    import torch
+
+    device = runtime.device()
+    tensor = torch.from_numpy(host_batch(batch_size, size, rank)).to(device)
+    runtime.mark_step()
+    tensor.cpu()
+    for _ in range(warmup):
+        tensor.cpu()
+    samples = []
+    for _ in range(steps):
+        started = time.perf_counter()
+        tensor.cpu()
+        samples.append(time.perf_counter() - started)
+    return summarize(samples)
+
+
 def measure_forward(runtime, model, steps, warmup, batch_size, size, rank):
     import torch
 
@@ -175,6 +192,10 @@ def main():
         runtime, args.steps, args.warmup, args.batch_size, args.size, rank
     )
     runtime.rendezvous("tensor-overlap-transfer")
+    device_to_host = measure_device_to_host(
+        runtime, args.steps, args.warmup, args.batch_size, args.size, rank
+    )
+    runtime.rendezvous("tensor-overlap-device-to-host")
     forward = measure_forward(
         runtime, model, args.steps, args.warmup, args.batch_size, args.size, rank
     )
@@ -196,6 +217,7 @@ def main():
             "steps": args.steps,
             "host_prepare": host,
             "host_to_hbm": transfer,
+            "hbm_to_host": device_to_host,
             "tensor_core_forward": forward,
             "sequential_host_hbm_forward": step,
             "cpu_producer_device_consumer": pipelined,
