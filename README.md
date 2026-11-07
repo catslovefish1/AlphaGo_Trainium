@@ -119,6 +119,16 @@ scripts/stage_tensor_overlap.sh trn09 00:10:00 tensor_overlap
 Its measurements are described in
 [`docs/tensor_overlap_report.md`](docs/tensor_overlap_report.md).
 
+For empirical MFU data across compilation shapes, queue the batch sweep.
+
+```bash
+scripts/stage_mfu_sweep.sh trn09 00:08:00 mfu_sweep
+```
+
+The array tests batch sizes 32, 64, and 128 on all 64 logical cores. Each
+point reports first-step compilation time, steady-state step time, aggregate
+samples/s, and the analytic MFU proxy.
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.

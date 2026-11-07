@@ -21,3 +21,15 @@ The arena is intentionally single-core for evaluation. Training remains the
 64-rank path. This keeps the strength measurement independent of the training
 collective and leaves the remaining logical cores available for a future
 training allocation.
+
+## Initial external result
+
+Fresh-seed checkpoint `checkpoint_030.pt` from job `16535` was matched against
+the official KataGo 9x9 network. The 32-visit two-game match scored `0-2`, with
+mean game length `105.5` plies. A shorter 8-visit four-game match scored `0-4`,
+with mean game length `106.5` plies. Colors alternated in both matches. These
+are baseline strength results, not a claim that the short smoke-trained model
+is close to KataGo.
+
+Raw results are under `docs/results/16540_katago_v3/` and
+`docs/results/16541_katago_fast/`.

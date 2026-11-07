@@ -17,3 +17,7 @@ forward time was `3.8071 ms`, and the sequential step was `4.5801 ms`. The
 producer-thread pipeline was `3.8130 ms`, giving a `1.2012x` timing proxy and
 `0.7671 ms` of hidden headroom. The raw JSON and Slurm log are under
 `docs/results/16539_tensor_overlap_v1/`.
+
+The empirical MFU sweep is separate because every batch shape can trigger a
+different XLA/Neuron compilation. Its three array tasks are intended to make
+that compile-versus-throughput cost visible.

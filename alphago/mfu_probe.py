@@ -3,6 +3,7 @@
 import json
 import os
 import time
+import argparse
 from pathlib import Path
 
 
@@ -21,45 +22,92 @@ def estimate_training_flops(size, channels, blocks, batch):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--size", type=int, default=9)
+    parser.add_argument("--channels", type=int, default=64)
+    parser.add_argument("--blocks", type=int, default=6)
+    parser.add_argument("--batch-size", type=int, default=64)
+    parser.add_argument("--warmup", type=int, default=0)
+    parser.add_argument("--steps", type=int, default=3)
+    parser.add_argument("--out")
+    args = parser.parse_args()
+    if args.batch_size <= 0 or args.steps <= 0 or args.warmup < 0:
+        raise ValueError("batch-size and steps must be positive, warmup cannot be negative")
     import torch
     import torch_neuronx  # noqa: F401
 
     from . import runtime
     from .model import build_model
+    import torch.distributed as dist
 
     rank, world = runtime.init_distributed()
     if world != 64:
         raise RuntimeError(f"expected WORLD_SIZE=64, got {world}")
     device = runtime.device()
-    model = build_model(size=9, channels=64, blocks=6).to(device)
+    model = build_model(
+        size=args.size, channels=args.channels, blocks=args.blocks
+    ).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
-    x = torch.zeros((64, 4, 9, 9), device=device)
-    target_policy = torch.zeros((64, 82), device=device)
+    x = torch.zeros((args.batch_size, 4, args.size, args.size), device=device)
+    target_policy = torch.zeros((args.batch_size, args.size * args.size + 1), device=device)
     target_policy[:, -1] = 1.0
-    target_value = torch.zeros(64, device=device)
-    times = []
-    for step in range(4):
-        started = time.time()
+    target_value = torch.zeros(args.batch_size, device=device)
+    for _ in range(args.warmup):
         optimizer.zero_grad()
         logits, value = model(x)
         loss = -(target_policy * torch.log_softmax(logits, dim=1)).sum(1).mean()
         loss = loss + torch.nn.functional.mse_loss(value, target_value)
         loss.backward()
         runtime.optimizer_step(optimizer)
-        if step:
-            times.append(time.time() - started)
+    started = time.perf_counter()
+    optimizer.zero_grad()
+    logits, value = model(x)
+    loss = -(target_policy * torch.log_softmax(logits, dim=1)).sum(1).mean()
+    loss = loss + torch.nn.functional.mse_loss(value, target_value)
+    loss.backward()
+    runtime.optimizer_step(optimizer)
+    initial_step_s = time.perf_counter() - started
+    times = []
+    for _ in range(args.steps):
+        started = time.perf_counter()
+        optimizer.zero_grad()
+        logits, value = model(x)
+        loss = -(target_policy * torch.log_softmax(logits, dim=1)).sum(1).mean()
+        loss = loss + torch.nn.functional.mse_loss(value, target_value)
+        loss.backward()
+        runtime.optimizer_step(optimizer)
+        times.append(time.perf_counter() - started)
+    def mean_across_ranks(value):
+        tensor = torch.tensor([value], dtype=torch.float32, device=device)
+        dist.all_reduce(tensor)
+        runtime.mark_step()
+        return float(tensor.cpu().item()) / world
+
+    initial_step_s = mean_across_ranks(initial_step_s)
+    steady_step_s = mean_across_ranks(sum(times) / len(times))
     runtime.rendezvous("mfu-complete")
     if rank == 0:
-        step_seconds = sum(times) / len(times)
-        flops_per_rank = estimate_training_flops(9, 64, 6, 64)
+        flops_per_rank = estimate_training_flops(
+            args.size, args.channels, args.blocks, args.batch_size
+        )
         aggregate_flops = flops_per_rank * world
         peak_bf16_tflops = float(os.environ.get("TRN2_PEAK_BF16_TFLOPS", "10700"))
-        achieved_tflops = aggregate_flops / step_seconds / 1e12
+        achieved_tflops = aggregate_flops / steady_step_s / 1e12
         output = Path(os.environ.get("SMOKE_OUT", "runs/64_rank_smoke"))
+        if args.out:
+            output = Path(args.out)
         output.mkdir(parents=True, exist_ok=True)
         result = {
             "world": world,
-            "steady_step_s": step_seconds,
+            "size": args.size,
+            "channels": args.channels,
+            "blocks": args.blocks,
+            "batch_size": args.batch_size,
+            "warmup": args.warmup,
+            "steps": args.steps,
+            "initial_step_s": initial_step_s,
+            "steady_step_s": steady_step_s,
+            "samples_per_s_aggregate": world * args.batch_size / steady_step_s,
             "estimated_training_flops_per_rank": flops_per_rank,
             "analytic_aggregate_tflops": achieved_tflops,
             "peak_bf16_tflops_reference": peak_bf16_tflops,
