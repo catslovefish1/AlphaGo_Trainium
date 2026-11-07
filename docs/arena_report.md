@@ -14,6 +14,8 @@ checkpoint is supplied.
 `alphago.gtp_match` drives our engine and an external GTP engine in alternating
 colors. The match harness treats the external engine as the strength reference
 and records the exact command, board size, komi, win counts, and game lengths.
+The node launcher fixes KataGo to one search thread and 32 visits so the first
+comparison has a declared compute budget on both sides.
 
 The arena is intentionally single-core for evaluation. Training remains the
 64-rank path. This keeps the strength measurement independent of the training

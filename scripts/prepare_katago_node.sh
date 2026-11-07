@@ -4,6 +4,7 @@ set -euo pipefail
 ASSET=/home/ralph/zhiwei_wang/assets/katago-v1.18.1
 ZIP="$ASSET/katago-v1.18.1-eigenavx2-linux-x64.zip"
 MODEL="$ASSET/kata9x9-b18c384nbt-20231025.bin.gz"
+MATCH_CONFIG="$ASSET/go9_match.cfg"
 mkdir -p "$ASSET"
 if [ ! -x "$ASSET/katago" ]; then
   curl -L --fail --silent --show-error \
@@ -26,4 +27,10 @@ if [ ! -f "$MODEL" ]; then
 fi
 test -x "$ASSET/katago"
 test -s "$MODEL"
+if [ ! -f "$MATCH_CONFIG" ]; then
+  cp "$ASSET/default_gtp.cfg" "$MATCH_CONFIG"
+  sed -i 's/^maxVisits = .*/maxVisits = 32/' "$MATCH_CONFIG"
+  sed -i 's/^numSearchThreads = .*/numSearchThreads = 1/' "$MATCH_CONFIG"
+fi
+test -s "$MATCH_CONFIG"
 echo "KataGo ready at $ASSET"

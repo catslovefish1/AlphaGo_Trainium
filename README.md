@@ -93,6 +93,8 @@ The match output records wins by engine and game lengths.
 
 The node launcher downloads the verified KataGo Eigen AVX2 binary and the
 official 9x9 network directly on `trn09`, then submits the match there.
+The generated KataGo match config uses one search thread and 32 visits to
+match the current checkpoint MCTS budget.
 
 ```bash
 scripts/stage_external_match.sh trn09 configs/go9_arena.json \

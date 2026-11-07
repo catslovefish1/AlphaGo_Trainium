@@ -62,10 +62,16 @@ class GtpClient:
 
 
 def _move_from_response(response, size):
-    token = response.strip().lstrip("= ").split()[0]
+    fields = response.strip().lstrip("= ").split()
+    if not fields:
+        raise ValueError(f"empty GTP move response: {response!r}")
+    token = fields[0]
     if token.lower() in {"resign", "pass"}:
         return token.lower()
-    return parse_vertex(token, size)
+    try:
+        return parse_vertex(token, size)
+    except (IndexError, ValueError) as exc:
+        raise ValueError(f"invalid GTP move response: {response!r}") from exc
 
 
 def _setup(client, size, komi):
