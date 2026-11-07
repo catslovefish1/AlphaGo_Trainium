@@ -47,6 +47,9 @@ The XLA training path remains the reference path until this probe produces an ar
 The current native compile and warmed-up overlap results are summarized in
 [`docs/parallelism_report.md`](docs/parallelism_report.md).
 
+The next 64-rank learning result is summarized in
+[`docs/learning_v1c_report.md`](docs/learning_v1c_report.md).
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.
