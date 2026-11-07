@@ -21,7 +21,7 @@ if ! ssh -o BatchMode=yes "$ADDR" "test -f '$CHECKPOINT'"; then
   rsync -a "$CHECKPOINT" "$ADDR:$CHECKPOINT"
 fi
 ssh -o BatchMode=yes "$ADDR" "cd '$CODE_WS' && KATAGO_VISITS='$VISITS' scripts/prepare_katago_node.sh"
-CMD_FILE="$ASSET/opponent_cmd.txt"
+CMD_FILE="$ASSET/opponent_cmd_${TAG}.txt"
 ssh -o BatchMode=yes "$ADDR" "printf '%s\\n' '$ASSET/katago gtp -config $ASSET/go9_match_${VISITS}.cfg -model $ASSET/kata9x9-b18c384nbt-20231025.bin.gz' > '$CMD_FILE'"
 JOB=$(ssh -o BatchMode=yes "$ADDR" "cd '$CODE_WS' && sbatch --parsable --partition=compute_fullnode --nodelist='$NODE' --gres=neuron:16 --exclusive --time='$TIME' --job-name='zhiwei_${TAG}' --export=ALL,CONFIG='$CONFIG',CHECKPOINT='$CHECKPOINT',TAG='$TAG',GAMES='$GAMES',OPPONENT_CMD_FILE='$CMD_FILE' scripts/external_match.sbatch")
 echo "$JOB"
