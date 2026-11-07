@@ -291,7 +291,10 @@ def main():
         games = collect_games(model, runtime, rules, cfg, rng, cfg["games_per_iter"], deadline)
         for samples, _, _ in games:
             replay.extend(samples)
-        if len(replay) < cfg["min_buffer"]:
+        ready_count = int(
+            reduce_sum(runtime, [int(len(replay) >= cfg["min_buffer"])])[0]
+        )
+        if ready_count < world:
             runtime.rendezvous(f"iteration-{iteration + 1}-buffer")
             continue
         policy_loss, value_loss = train_steps(model, optimizer, runtime, replay, cfg, cfg["size"], rng)

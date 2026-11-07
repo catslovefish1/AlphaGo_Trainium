@@ -48,4 +48,7 @@ compiled its training graph but failed during the first gradient synchronization
 with `SyncTensorsGraph` and collective-resource errors. The failure log is
 preserved under `docs/results/16530_learning_v1/`. The follow-up keeps 64 ranks
 and returns to `train_batch=64`, while increasing search and update counts in
-smaller steps.
+smaller steps. The retry also exposed a replay-readiness branch where ranks
+could enter different collective paths when a short game left one local buffer
+below `min_buffer`. The training loop now reduces readiness across all ranks
+before taking that branch.
