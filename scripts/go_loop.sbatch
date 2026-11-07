@@ -27,5 +27,9 @@ run64() {
 }
 run64 alphago.distributed_smoke
 run64 alphago.mfu_probe
-run64 alphago.train --config "$CONFIG" --out "$OUT"
+RESUME_ARGS=()
+if [ -n "${RESUME:-}" ]; then
+  RESUME_ARGS=(--resume "$RESUME")
+fi
+run64 alphago.train --config "$CONFIG" --out "$OUT" "${RESUME_ARGS[@]}"
 echo "job=$SLURM_JOB_ID done=$(date -u +%FT%TZ)"

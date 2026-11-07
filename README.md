@@ -28,6 +28,15 @@ scripts/stage_and_submit.sh trn09 configs/go9_smoke.json 00:30:00 go9_smoke
 scripts/fetch_results.sh <jobid> go9_smoke
 ```
 
+To continue from a head01 checkpoint, pass its absolute path as a fifth
+argument. The staging script copies that checkpoint to the same node path
+before Slurm starts the 64-rank job.
+
+```bash
+scripts/stage_and_submit.sh trn09 configs/go9_learning_v1b.json 00:10:00 go9_resume \
+  /home/ralph/zhiwei_wang/AlphaGo_Trainium/runs/16532/go9_learning_v1c/checkpoint_020.pt
+```
+
 The job uses `NEURON_LOGICAL_NC_CONFIG=2`, `NEURON_RT_NUM_CORES=64`, and the installed XLA backend. It stops after a short training budget. Rank 0 writes checkpoints and aggregated metrics.
 
 For a longer learning run, use `configs/go9_learning_v1.json`. Its checkpoints keep model and optimizer state on rank 0 and regenerate replay after resume, which keeps checkpoint traffic bounded as the buffer grows.
