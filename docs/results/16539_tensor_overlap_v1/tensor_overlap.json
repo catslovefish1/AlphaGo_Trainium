@@ -1,0 +1,54 @@
+{
+  "world": 64,
+  "shape": [
+    4,
+    4,
+    9,
+    9
+  ],
+  "warmup": 2,
+  "steps": 4,
+  "host_prepare": {
+    "mean_ms": 0.09797344682738185,
+    "p50_ms": 0.03605498932301998,
+    "p95_ms": 0.2540050889365374,
+    "samples": 4
+  },
+  "host_to_hbm": {
+    "mean_ms": 0.296509824693203,
+    "p50_ms": 0.27134548872709274,
+    "p95_ms": 0.42923631845042104,
+    "samples": 4
+  },
+  "tensor_core_forward": {
+    "mean_ms": 3.807117755059153,
+    "p50_ms": 3.838508971966803,
+    "p95_ms": 4.041864722967148,
+    "samples": 4
+  },
+  "sequential_host_hbm_forward": {
+    "mean_ms": 4.5801340020261705,
+    "p50_ms": 4.643569001927972,
+    "p95_ms": 4.897455789614469,
+    "samples": 4
+  },
+  "cpu_producer_device_consumer": {
+    "mean_ms": 3.813000745140016,
+    "p50_ms": 3.813000745140016,
+    "p95_ms": 3.813000745140016,
+    "samples": 4,
+    "device_consumer": {
+      "mean_ms": 3.613272507209331,
+      "p50_ms": 3.5271234810352325,
+      "p95_ms": 4.153576656244695,
+      "samples": 4
+    }
+  },
+  "pipeline_proxy": {
+    "sequential_mean_ms": 4.5801340020261705,
+    "pipelined_mean_ms": 3.813000745140016,
+    "speedup": 1.2011888557493542,
+    "headroom_ms": 0.7671332568861544,
+    "interpretation": "CPU host preparation overlaps the device consumer; use a device timeline for exact HBM and tensor-core overlap attribution"
+  }
+}

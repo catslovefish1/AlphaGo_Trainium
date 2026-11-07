@@ -1,0 +1,385 @@
+2026-Nov-07 22:50:27.0432 2352854:2353095 [51] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:27.0435 2352854:2353095 [51] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:27.0438 2352854:2353095 [51] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:27.0441 2352854:2353095 [51] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:27.0665 2352811:2353680 [8] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:27.0668 2352811:2353680 [8] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:27.0671 2352811:2353680 [8] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:27.0673 2352811:2353680 [8] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0030 2352834:2354760 [31] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0033 2352834:2354760 [31] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0035 2352834:2354760 [31] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0038 2352834:2354760 [31] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0114 2352804:2357976 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0116 2352804:2357976 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0119 2352804:2357976 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0121 2352804:2357976 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0125 2352837:2358226 [34] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0128 2352837:2358226 [34] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0130 2352837:2358226 [34] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0133 2352837:2358226 [34] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0169 2352844:2354889 [41] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0172 2352844:2354889 [41] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0175 2352844:2354889 [41] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0176 2352859:2368510 [56] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0177 2352844:2354889 [41] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0179 2352859:2368510 [56] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0184 2352859:2368510 [56] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0186 2352859:2368510 [56] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0430 2352841:2358361 [38] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0433 2352841:2358361 [38] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0435 2352841:2358361 [38] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0438 2352841:2358361 [38] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:28.0443 2352809:2354757 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:28.0446 2352809:2354757 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:28.0448 2352809:2354757 [6] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:28.0450 2352809:2354757 [6] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0266 2352828:2358315 [25] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0269 2352828:2358315 [25] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0272 2352847:2364819 [44] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0272 2352828:2358315 [25] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0274 2352847:2364819 [44] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0275 2352815:2354848 [12] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0275 2352815:2354848 [12] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0275 2352815:2354848 [12] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0275 2352815:2354848 [12] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0276 2352828:2358315 [25] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0278 2352847:2364819 [44] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0291 2352847:2364819 [44] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0328 2352855:2362730 [52] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0330 2352855:2362730 [52] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0333 2352855:2362730 [52] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0333 2352822:2358012 [19] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0335 2352855:2362730 [52] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0335 2352863:2364435 [60] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:29.0335 2352863:2364435 [60] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0335 2352863:2364435 [60] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0335 2352863:2364435 [60] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0337 2352822:2358012 [19] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0350 2352822:2358012 [19] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0352 2352822:2358012 [19] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0540 2352825:2371093 [22] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Fai2026-Nov-07 22:50:29.0540 2352823:2371206 [20] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+led to initialize rdma protocol
+2026-Nov-07 22:50:29.0540 2352825:2371093 [22] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0542 2352823:2371206 [20] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:29.0544 2352825:2371093 [22] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0546 2352823:2371206 [20] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:29.0548 2352825:2371093 [22] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:29.0550 2352823:2371206 [20] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:38.0190 2352853:2383075 [50] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:38.0193 2352853:2383075 [50] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:38.0195 2352853:2383075 [50] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:38.0197 2352853:2383075 [50] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:38.0199 2352851:2383964 [48] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:38.0201 2352852:2378347 [49] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:38.0201 2352851:2383964 [48] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:38.0203 2352852:2378347 [49] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:38.0205 2352851:2383964 [48] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:38.0207 2352852:2378347 [49] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:38.0209 2352851:2383964 [48] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:38.0211 2352852:2378347 [49] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0171 2352803:2358496 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0172 2352806:2375875 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0173 2352803:2358496 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0175 2352806:2375875 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0177 2352803:2358496 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0179 2352806:2375875 [3] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0181 2352803:2358496 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0183 2352806:2375875 [3] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0192 2352805:2362534 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0194 2352805:2362534 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0197 2352805:2362534 [2] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0199 2352805:2362534 [2] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0257 2352860:2384203 [57] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0259 2352860:2384203 [57] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0262 2352860:2384203 [57] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0263 2352861:2378408 [58] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0263 2352862:2387601 [59] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0263 2352862:2387601 [59] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0263 2352862:2387601 [59] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0263 2352862:2387601 [59] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0263 2352860:2384203 [57] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0266 2352861:2378408 [58] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0279 2352861:2378408 [58] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0281 2352861:2378408 [58] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:39.0969 2352838:2372719 [35] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:39.0972 2352838:2372719 [35] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:39.0974 2352838:2372719 [35] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:39.0976 2352838:2372719 [35] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0000 2352835:2364350 [32] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0003 2352835:2364350 [32] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0005 2352835:2364350 [32] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0007 2352835:2364350 [32] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0009 2352840:2358383 [37] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0012 2352840:2358383 [37] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0013 2352807:2387352 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0014 2352810:2375874 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0014 2352840:2358383 [37] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0014 2352840:2358383 [37] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0016 2352807:2387352 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0018 2352810:2375874 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0018 2352839:2365995 [36] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0018 2352839:2365995 [36] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0018 2352839:2365995 [36] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0018 2352839:2365995 [36] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0020 2352807:2387352 [4] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0021 2352836:2370911 [33] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0021 2352836:2370911 [33] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0021 2352836:2370911 [33] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0021 2352836:2370911 [33] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0021 2352842:2366196 [39] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0021 2352842:2366196 [39] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0021 2352842:2366196 [39] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0021 2352842:2366196 [39] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0022 2352810:2375874 [7] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0023 2352808:2375822 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0023 2352808:2375822 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0023 2352808:2375822 [5] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0023 2352808:2375822 [5] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0024 2352807:2387352 [4] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0026 2352810:2375874 [7] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0037 2352813:2381125 [10] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0037 2352813:2381125 [10] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0037 2352813:2381125 [10] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0037 2352813:2381125 [10] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0039 2352814:2357874 [11] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0039 2352812:2358363 [9] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0039 2352812:2358363 [9] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0039 2352812:2358363 [9] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0039 2352812:2358363 [9] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0088 2352814:2357874 [11] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0091 2352814:2357874 [11] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0093 2352814:2357874 [11] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0389 2352850:2374704 [47] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0391 2352850:2374704 [47] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0394 2352850:2374704 [47] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0396 2352850:2374704 [47] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0406 2352849:2365950 [46] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0406 2352848:2381375 [45] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0408 2352849:2365950 [46] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0410 2352848:2381375 [45] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0412 2352849:2365950 [46] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0414 2352848:2381375 [45] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0416 2352849:2365950 [46] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0418 2352848:2381375 [45] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0490 2352832:2364384 [29] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0493 2352832:2364384 [29] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0495 2352833:2365071 [30] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0495 2352832:2364384 [29] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0495 2352831:2366307 [28] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:40.0495 2352831:2366307 [28] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0495 2352831:2366307 [28] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0495 2352831:2366307 [28] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0497 2352833:2365071 [30] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:40.0499 2352832:2364384 [29] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:40.0501 2352833:2365071 [30] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:40.0515 2352833:2365071 [30] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0438 2352858:2383377 [55] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0438 2352856:2383823 [53] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0440 2352858:2383377 [55] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0442 2352856:2383823 [53] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0444 2352858:2383377 [55] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0444 2352858:2383377 [55] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0446 2352857:2376540 [54] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0446 2352857:2376540 [54] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0446 2352857:2376540 [54] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0446 2352857:2376540 [54] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0446 2352856:2383823 [53] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0464 2352856:2383823 [53] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0468 2352819:2381492 [16] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0471 2352819:2381492 [16] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0472 2352821:2374121 [18] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0473 2352819:2381492 [16] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0473 2352820:2364379 [17] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0473 2352820:2364379 [17] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0473 2352820:2364379 [17] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0473 2352820:2364379 [17] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0475 2352821:2374121 [18] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0477 2352819:2381492 [16] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0479 2352821:2374121 [18] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0492 2352821:2374121 [18] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0923 2352865:2375813 [62] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0925 2352845:2379561 [42] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0926 2352865:2375813 [62] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0927 2352866:2389080 [63] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0927 2352866:2389080 [63] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0927 2352866:2389080 [63] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0927 2352866:2389080 [63] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0927 2352845:2379561 [42] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0929 2352865:2375813 [62] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0931 2352845:2379561 [42] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0933 2352865:2375813 [62] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0935 2352845:2379561 [42] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0953 2352817:2385996 [14] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0954 2352843:2358347 [40] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0955 2352864:2387479 [61] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0955 2352864:2387479 [61] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0955 2352864:2387479 [61] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0955 2352864:2387479 [61] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0955 2352817:2385996 [14] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0957 2352843:2358347 [40] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0958 2352816:2379347 [13] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0958 2352816:2379347 [13] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0958 2352816:2379347 [13] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0958 2352816:2379347 [13] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0959 2352818:2378457 [15] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0959 2352818:2378457 [15] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0959 2352818:2378457 [15] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0959 2352818:2378457 [15] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0959 2352817:2385996 [14] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0961 2352846:2389040 [43] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:41.0961 2352846:2389040 [43] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:41.0961 2352846:2389040 [43] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0961 2352846:2389040 [43] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0961 2352843:2358347 [40] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:41.0963 2352817:2385996 [14] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:41.0965 2352843:2358347 [40] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:42.0404 2352830:2367401 [27] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:42.0405 2352827:2373096 [24] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:42.0406 2352830:2367401 [27] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:42.0408 2352827:2373096 [24] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:42.0410 2352830:2367401 [27] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:42.0412 2352827:2373096 [24] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:42.0412 2352829:2367850 [26] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:42.0412 2352829:2367850 [26] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:42.0412 2352829:2367850 [26] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:42.0412 2352829:2367850 [26] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:42.0414 2352830:2367401 [27] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:42.0416 2352827:2373096 [24] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:42.0474 2352826:2383814 [23] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:42.0476 2352824:2383813 [21] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-07 22:50:42.0477 2352826:2383814 [23] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:42.0479 2352824:2383813 [21] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-07 22:50:42.0481 2352826:2383814 [23] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:42.0483 2352824:2383813 [21] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-07 22:50:42.0485 2352826:2383814 [23] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-07 22:50:42.0487 2352824:2383813 [21] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+XLA_USE_BF16 will be deprecated after the 2.6 release, please convert your model to bf16 directly
+2026-11-07 22:50:42.000868:  2352866  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000869:  2352805  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000869:  2352861  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000869:  2352837  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000869:  2352808  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000870:  2352834  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000870:  2352807  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352804  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352819  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352803  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352831  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352816  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352857  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352836  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000871:  2352810  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000872:  2352817  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352826  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352856  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352832  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352825  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352860  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352864  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000873:  2352846  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000874:  2352848  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000874:  2352839  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000875:  2352858  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352849  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352812  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352853  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352822  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352811  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352814  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000876:  2352835  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000877:  2352827  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000877:  2352815  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000878:  2352838  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000878:  2352830  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000878:  2352844  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000878:  2352855  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000879:  2352841  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000879:  2352847  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000880:  2352829  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352854  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352851  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352823  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352862  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352845  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352840  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000881:  2352813  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352828  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352818  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352843  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352821  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352842  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352850  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000882:  2352806  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352824  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352820  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352865  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352852  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352833  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352863  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000883:  2352809  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+2026-11-07 22:50:42.000884:  2352859  [INFO]: Using a cached neff at /var/tmp/neuron-compile-cache/neuronxcc-2.26.6360.0+6f180f47/MODULE_4722057545629026738+fad94d7c/model.neff
+{"world": 64, "shape": [4, 4, 9, 9], "warmup": 2, "steps": 4, "host_prepare": {"mean_ms": 0.09797344682738185, "p50_ms": 0.03605498932301998, "p95_ms": 0.2540050889365374, "samples": 4}, "host_to_hbm": {"mean_ms": 0.296509824693203, "p50_ms": 0.27134548872709274, "p95_ms": 0.42923631845042104, "samples": 4}, "tensor_core_forward": {"mean_ms": 3.807117755059153, "p50_ms": 3.838508971966803, "p95_ms": 4.041864722967148, "samples": 4}, "sequential_host_hbm_forward": {"mean_ms": 4.5801340020261705, "p50_ms": 4.643569001927972, "p95_ms": 4.897455789614469, "samples": 4}, "cpu_producer_device_consumer": {"mean_ms": 3.813000745140016, "p50_ms": 3.813000745140016, "p95_ms": 3.813000745140016, "samples": 4, "device_consumer": {"mean_ms": 3.613272507209331, "p50_ms": 3.5271234810352325, "p95_ms": 4.153576656244695, "samples": 4}}, "pipeline_proxy": {"sequential_mean_ms": 4.5801340020261705, "pipelined_mean_ms": 3.813000745140016, "speedup": 1.2011888557493542, "headroom_ms": 0.7671332568861544, "interpretation": "CPU host preparation overlaps the device consumer; use a device timeline for exact HBM and tensor-core overlap attribution"}}
