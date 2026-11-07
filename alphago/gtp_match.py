@@ -32,13 +32,20 @@ class GtpClient:
         self.process.stdin.write(line + "\n")
         self.process.stdin.flush()
         response = []
+        response_started = False
         while True:
             text = self.process.stdout.readline()
             if text == "":
                 raise RuntimeError(f"{self.label} closed stdout while handling {line!r}")
-            if not text.strip():
+            stripped = text.strip()
+            if not response_started and not stripped:
+                continue
+            if not response_started and not stripped.startswith(("=", "?")):
+                continue
+            if response_started and not stripped:
                 break
             response.append(text.rstrip("\n"))
+            response_started = True
         if not response:
             return ""
         first = response[0]

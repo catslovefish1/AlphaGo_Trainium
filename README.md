@@ -107,6 +107,15 @@ Training launchers also pull the public main branch directly into
 working clone keeps run data and checkpoints in the separate
 `/home/ralph/zhiwei_wang/AlphaGo_Trainium/runs` tree.
 
+The short CPU→HBM→forward overlap probe can be queued with
+
+```bash
+scripts/stage_tensor_overlap.sh trn09 00:10:00 tensor_overlap
+```
+
+Its measurements are described in
+[`docs/tensor_overlap_report.md`](docs/tensor_overlap_report.md).
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.
