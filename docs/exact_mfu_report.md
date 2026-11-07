@@ -17,3 +17,8 @@ their profiles retained no HLO FLOP metadata and reported `model_flops: 0`.
 The launcher now gives each capture a fresh `NEURON_CC_FLAGS=--cache_dir=...`
 directory and enables `NEURON_FRAMEWORK_DEBUG=1` before compilation. A fresh
 capture is required before treating `mfu_hlo_estimated_percent` as exact.
+
+The next capture uses a small explicit matmul workload to validate HLO FLOP
+accounting. The policy-value network profile remains useful for device,
+HBM, DMA, and synchronization timings, but its convolution kernels currently
+produce instruction-level MFU without HLO `model_flops` in this SDK build.
