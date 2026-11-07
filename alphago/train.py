@@ -161,21 +161,30 @@ def _move_optimizer_state(optimizer, device):
                 state[key] = value.to(device)
 
 
-def save_checkpoint(model, optimizer, replay, rng, path, iteration, rank):
+def save_checkpoint(model, optimizer, replay, rng, path, iteration, rank, include_replay):
     import torch
 
+    if not include_replay and rank != 0:
+        return
     payload = {
         "model_state": _to_cpu(model.state_dict()),
         "optimizer_state": _to_cpu(optimizer.state_dict()),
-        "replay": list(replay),
         "iteration": iteration,
-        "numpy_rng_state": rng.bit_generator.state,
-        "python_rng_state": random.getstate(),
-        "torch_rng_state": torch.get_rng_state(),
     }
-    rank_path = path.with_name(f"{path.stem}.rank{rank:03d}{path.suffix}")
-    torch.save(payload, rank_path)
-    if rank == 0:
+    if include_replay:
+        payload.update(
+            {
+                "replay": list(replay),
+                "numpy_rng_state": rng.bit_generator.state,
+                "python_rng_state": random.getstate(),
+                "torch_rng_state": torch.get_rng_state(),
+            }
+        )
+        rank_path = path.with_name(f"{path.stem}.rank{rank:03d}{path.suffix}")
+        torch.save(payload, rank_path)
+        if rank == 0:
+            torch.save(payload, path)
+    elif rank == 0:
         torch.save(payload, path)
 
 
@@ -266,12 +275,16 @@ def main():
     records = []
     if rank == 0 and resume_path:
         metrics_path = output / "metrics.jsonl"
+        if not metrics_path.exists():
+            metrics_path = resume_path.parent / "metrics.jsonl"
         if metrics_path.exists():
             records = [
                 json.loads(line)
                 for line in metrics_path.read_text().splitlines()
                 if line.strip()
             ]
+    checkpoint_interval = max(1, int(cfg.get("checkpoint_interval", 1)))
+    checkpoint_replay = bool(cfg.get("checkpoint_replay", True))
     for iteration in range(start_iteration, cfg["iterations"]):
         if time.time() >= deadline:
             break
@@ -299,15 +312,21 @@ def main():
             records.append(record)
             with output.joinpath("metrics.jsonl").open("a") as stream:
                 stream.write(json.dumps(record) + "\n")
-        save_checkpoint(
-            model,
-            optimizer,
-            replay,
-            rng,
-            output / f"checkpoint_{iteration + 1:03d}.pt",
-            iteration + 1,
-            rank,
+        should_checkpoint = (
+            (iteration + 1) % checkpoint_interval == 0
+            or iteration + 1 == cfg["iterations"]
         )
+        if should_checkpoint:
+            save_checkpoint(
+                model,
+                optimizer,
+                replay,
+                rng,
+                output / f"checkpoint_{iteration + 1:03d}.pt",
+                iteration + 1,
+                rank,
+                checkpoint_replay,
+            )
         if rank == 0:
             print(json.dumps(record), flush=True)
         runtime.rendezvous(f"iteration-{iteration + 1}")
