@@ -107,6 +107,7 @@ def main():
             "steps": args.steps,
             "initial_step_s": initial_step_s,
             "steady_step_s": steady_step_s,
+            "steady_step_samples_s": times,
             "samples_per_s_aggregate": world * args.batch_size / steady_step_s,
             "estimated_training_flops_per_rank": flops_per_rank,
             "analytic_aggregate_tflops": achieved_tflops,

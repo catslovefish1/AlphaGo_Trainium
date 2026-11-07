@@ -129,6 +129,9 @@ The array tests batch sizes 32, 64, and 128 on all 64 logical cores. Each
 point reports first-step compilation time, steady-state step time, aggregate
 samples/s, and the analytic MFU proxy.
 
+The first batch sweep is recorded in
+[`docs/mfu_sweep_report.md`](docs/mfu_sweep_report.md).
+
 The architecture sweep uses the same batch size while varying channels and
 residual blocks. Queue it with `scripts/stage_nn_mfu_sweep.sh trn09`.
 
