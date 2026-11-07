@@ -19,15 +19,18 @@ export OMP_NUM_THREADS=1
 export XLA_USE_BF16=1
 export XLA_IR_DEBUG=1
 export XLA_HLO_DEBUG=1
+export NEURON_FRAMEWORK_DEBUG=1
 export NEURON_RT_INSPECT_ENABLE=1
 export NEURON_RT_INSPECT_SYSTEM_PROFILE=1
 export NEURON_RT_INSPECT_DEVICE_PROFILE=1
 export NEURON_RT_INSPECT_DEVICE_PROFILE_NUM_WARMUP=2
+export NEURON_RT_ENABLE_DGE_NOTIFICATIONS=1
 
 cd "$CODE_WS"
 OUT="$WS/runs/$SLURM_JOB_ID/exact_mfu"
 PROFILE="$OUT/profile"
 mkdir -p "$PROFILE"
+export TORCH_NEURONX_NEFF_CACHE_DIR="$OUT/neff_cache"
 export NEURON_RT_INSPECT_OUTPUT_DIR="$PROFILE"
 python -m alphago.mfu_profile_workload --size 9 --channels 64 --blocks 6 --batch-size 64 --steps 6 > "$OUT/workload.json"
 export PATH=/opt/aws/neuron/bin:"$PATH"
