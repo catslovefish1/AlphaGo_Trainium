@@ -91,6 +91,20 @@ both engines through GTP. Set the external engine command to a fixed KataGo or
 GNU Go configuration with the same board size, komi, rules, and search budget.
 The match output records wins by engine and game lengths.
 
+The node launcher downloads the verified KataGo Eigen AVX2 binary and the
+official 9x9 network directly on `trn09`, then submits the match there.
+
+```bash
+scripts/stage_external_match.sh trn09 configs/go9_arena.json \
+  /home/ralph/zhiwei_wang/AlphaGo_Trainium/runs/16535/go9_fromscratch_v2/checkpoint_030.pt \
+  00:30:00 go9_katago_9x9 20
+```
+
+Training launchers also pull the public main branch directly into
+`/home/ralph/zhiwei_wang/AlphaGo_Trainium_git` on the allocated node. The
+working clone keeps run data and checkpoints in the separate
+`/home/ralph/zhiwei_wang/AlphaGo_Trainium/runs` tree.
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.

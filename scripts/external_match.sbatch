@@ -9,6 +9,7 @@
 set -euo pipefail
 
 WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium
+CODE_WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium_git
 VENV=/opt/aws_neuronx_venv_pytorch_2_9
 export PATH="$VENV/bin:/opt/aws/neuron/bin:$PATH"
 export PJRT_DEVICE=NEURON
@@ -17,9 +18,10 @@ export NEURON_RT_NUM_CORES=1
 export OMP_NUM_THREADS=1
 export XLA_USE_BF16=1
 
-cd "$WS"
+cd "$CODE_WS"
 OUT="$WS/runs/$SLURM_JOB_ID/${TAG:-external_match}"
 mkdir -p "$OUT"
+OPPONENT_CMD="$(cat "$OPPONENT_CMD_FILE")"
 python -m alphago.gtp_match \
   --checkpoint "$CHECKPOINT" \
   --config "$CONFIG" \
