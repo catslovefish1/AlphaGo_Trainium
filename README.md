@@ -32,6 +32,8 @@ The job uses `NEURON_LOGICAL_NC_CONFIG=2`, `NEURON_RT_NUM_CORES=64`, and the ins
 
 For a longer learning run, use `configs/go9_learning_v1.json`. Its checkpoints keep model and optimizer state on rank 0 and regenerate replay after resume, which keeps checkpoint traffic bounded as the buffer grows.
 
+The first larger-batch trial is retained as a diagnostic. `configs/go9_learning_v1b.json` keeps all 64 ranks and the resumable checkpoint mode while using the batch size that passed the original smoke run.
+
 ## Native fused-NEFF probe
 
 The optional native probe traces one fixed-shape policy-value forward graph with `torch_neuronx.trace`. The trace API emits a fused `neuron::forward` graph that can be saved as a TorchScript artifact. Run it as a separate short Slurm job when a node window is available.

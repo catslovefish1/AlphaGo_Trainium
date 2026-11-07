@@ -42,3 +42,10 @@ with 4,096 float32 elements.
 The measured host preparation is small beside collective latency at this
 payload. Larger gradient buckets and accumulation are the next communication
 experiments before changing the self-play scheduler.
+
+The first scaled learning trial, job `16530`, used `train_batch=256`. It
+compiled its training graph but failed during the first gradient synchronization
+with `SyncTensorsGraph` and collective-resource errors. The failure log is
+preserved under `docs/results/16530_learning_v1/`. The follow-up keeps 64 ranks
+and returns to `train_batch=64`, while increasing search and update counts in
+smaller steps.

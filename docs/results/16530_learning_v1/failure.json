@@ -1,0 +1,1 @@
+{"job":16530,"config":"go9_learning_v1","status":"failed","stage":"first_gradient_synchronization","error":"SyncTensorsGraph / collective resources","train_batch":256,"world":64}
