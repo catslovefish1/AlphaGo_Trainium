@@ -102,6 +102,9 @@ scripts/stage_external_match.sh trn09 configs/go9_arena.json \
   00:30:00 go9_katago_9x9 20
 ```
 
+Pass an eighth argument to set the matched KataGo visits. Use
+`configs/go9_arena_fast.json` and `8` visits for a short protocol check.
+
 Training launchers also pull the public main branch directly into
 `/home/ralph/zhiwei_wang/AlphaGo_Trainium_git` on the allocated node. The
 working clone keeps run data and checkpoints in the separate
