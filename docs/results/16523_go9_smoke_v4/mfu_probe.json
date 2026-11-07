@@ -1,4 +1,9 @@
 {
   "world": 64,
-  "steady_step_s": 0.20047473907470703
+  "steady_step_s": 0.20047473907470703,
+  "estimated_training_flops_per_rank": 13857229824,
+  "peak_bf16_tflops_reference": 10700.0,
+  "mfu_basis": "timing proxy with an analytic 3x forward FLOPs estimate; exact MFU requires Neuron Explorer model_flops",
+  "analytic_aggregate_tflops": 4.42381275979868,
+  "analytic_utilization_proxy_percent": 0.04134404448409981
 }
