@@ -152,6 +152,20 @@ Its summary uses HLO `model_flops` and `mfu_hlo_estimated_percent`. The system
 profile is enabled with the device profile so CPU launch and transfer intervals
 can be compared with HBM and tensor-engine activity.
 
+The 19x19 smoke-training configuration uses the best measured 64-channel,
+6-block candidate with batch size 32. It runs training only, which avoids
+repeating the 9x9 probes before every 19x19 iteration.
+
+```bash
+scripts/stage_go19_train.sh trn09 configs/go19_train_smoke.json 06:00:00 go19_train
+scripts/sync_node_run.sh trn09 <jobid> go19_train
+```
+
+Run the synchronization helper from head01 about every 30 minutes while the
+job is active. It retrieves metrics, summaries, configuration, and rank-zero
+checkpoints into a head01 collection directory. The node remains the source of
+the live run and the large checkpoint files stay outside GitHub.
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.

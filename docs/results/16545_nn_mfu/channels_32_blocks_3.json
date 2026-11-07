@@ -1,0 +1,17 @@
+{
+  "world": 64,
+  "size": 9,
+  "channels": 32,
+  "blocks": 3,
+  "batch_size": 64,
+  "warmup": 0,
+  "steps": 2,
+  "initial_step_s": 26.0,
+  "steady_step_s": 14.875,
+  "samples_per_s_aggregate": 275.3613445378151,
+  "estimated_training_flops_per_rank": 1775963136,
+  "analytic_aggregate_tflops": 0.007641118702789916,
+  "peak_bf16_tflops_reference": 10700.0,
+  "analytic_utilization_proxy_percent": 7.14123243251394e-05,
+  "mfu_basis": "timing proxy with an analytic 3x forward FLOPs estimate; exact MFU requires Neuron Explorer model_flops"
+}
