@@ -1,0 +1,28 @@
+{
+  "world": 64,
+  "elements": 4096,
+  "host_prepare": {
+    "mean_ms": 0.08904160931706429,
+    "p50_ms": 0.05211401730775833,
+    "p95_ms": 0.19674883224070067,
+    "samples": 5
+  },
+  "host_to_device": {
+    "mean_ms": 0.23799999617040157,
+    "p50_ms": 0.2270790282636881,
+    "p95_ms": 0.3217838238924742,
+    "samples": 5
+  },
+  "all_reduce": {
+    "mean_ms": 4.92686522193253,
+    "p50_ms": 3.087725955992937,
+    "p95_ms": 12.351363105699418,
+    "samples": 5
+  },
+  "pipeline_proxy": {
+    "sequential_mean_ms": 5.164865218102932,
+    "lower_bound_mean_ms": 4.92686522193253,
+    "headroom_ms": 0.23799999617040157,
+    "basis": "max(host-to-device, all-reduce) lower bound; validate true overlap with a device timeline"
+  }
+}

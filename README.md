@@ -30,6 +30,23 @@ scripts/fetch_results.sh <jobid> go9_smoke
 
 The job uses `NEURON_LOGICAL_NC_CONFIG=2`, `NEURON_RT_NUM_CORES=64`, and the installed XLA backend. It stops after a short training budget. Rank 0 writes checkpoints and aggregated metrics.
 
+## Native fused-NEFF probe
+
+The optional native probe traces one fixed-shape policy-value forward graph with `torch_neuronx.trace`. The trace API emits a fused `neuron::forward` graph that can be saved as a TorchScript artifact. Run it as a separate short Slurm job when a node window is available.
+
+```bash
+sbatch -p compute_fullnode -w trn09 --time=00:10:00 -J zhiwei_native_neff scripts/native_neff_probe.sbatch
+```
+
+The XLA training path remains the reference path until this probe produces an artifact and a compile time that fit the node window.
+
+The current native compile and warmed-up overlap results are summarized in
+[`docs/parallelism_report.md`](docs/parallelism_report.md).
+
+## Host and collective timing probe
+
+After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.
+
 ## Evaluation boundary
 
 Public engine binaries and weights belong under `assets/` and are used only after a checkpoint exists. They never enter the self-play replay buffer. The GTP adapter accepts standard `boardsize`, `clear_board`, `komi`, `play`, `genmove`, `undo`, `final_score`, and `quit` commands.

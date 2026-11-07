@@ -106,6 +106,8 @@ def train_steps(model, optimizer, runtime, replay, cfg, size, rng):
 
 
 def eval_random(model, runtime, rules, cfg, seed, games):
+    import numpy as np
+
     rng = random.Random(seed)
     wins = 0
     for _ in range(games):
@@ -114,7 +116,9 @@ def eval_random(model, runtime, rules, cfg, seed, games):
             if state.to_play == 1:
                 logits, _ = evaluate_model(model, runtime, [state], rules.size, cfg["slots"])
                 legal = state.legal_moves()
-                move = max(legal, key=lambda action: float(logits[0, action]))
+                masked = np.full(len(logits[0]), -np.inf, dtype=np.float32)
+                masked[legal] = logits[0, legal]
+                move = int(masked.argmax())
             else:
                 legal = state.legal_moves()
                 move = legal[rng.randrange(len(legal))]
@@ -133,16 +137,97 @@ def reduce_sum(runtime, values):
     return tensor.cpu().tolist()
 
 
-def save_checkpoint(model, path):
-    import torch_xla.core.xla_model as xm
+def _to_cpu(value):
+    """Copy checkpoint values off the accelerator before serializing them."""
+    import torch
 
-    xm.save(model.state_dict(), path)
+    if torch.is_tensor(value):
+        return value.detach().cpu()
+    if isinstance(value, dict):
+        return {key: _to_cpu(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_to_cpu(item) for item in value]
+    if isinstance(value, tuple):
+        return tuple(_to_cpu(item) for item in value)
+    return value
+
+
+def _move_optimizer_state(optimizer, device):
+    import torch
+
+    for state in optimizer.state.values():
+        for key, value in state.items():
+            if torch.is_tensor(value):
+                state[key] = value.to(device)
+
+
+def save_checkpoint(model, optimizer, replay, rng, path, iteration, rank):
+    import torch
+
+    payload = {
+        "model_state": _to_cpu(model.state_dict()),
+        "optimizer_state": _to_cpu(optimizer.state_dict()),
+        "replay": list(replay),
+        "iteration": iteration,
+        "numpy_rng_state": rng.bit_generator.state,
+        "python_rng_state": random.getstate(),
+        "torch_rng_state": torch.get_rng_state(),
+    }
+    rank_path = path.with_name(f"{path.stem}.rank{rank:03d}{path.suffix}")
+    torch.save(payload, rank_path)
+    if rank == 0:
+        torch.save(payload, path)
+
+
+def load_checkpoint(model, optimizer, replay, rng, path, rank, device):
+    import torch
+
+    rank_path = path.with_name(f"{path.stem}.rank{rank:03d}{path.suffix}")
+    load_path = rank_path if rank_path.exists() else path
+    try:
+        payload = torch.load(load_path, map_location="cpu", weights_only=False)
+    except TypeError:
+        payload = torch.load(load_path, map_location="cpu")
+    if "model_state" not in payload:
+        payload = {"model_state": payload, "iteration": 0, "replay": []}
+    model.load_state_dict(payload["model_state"])
+    if payload.get("optimizer_state"):
+        optimizer.load_state_dict(payload["optimizer_state"])
+        _move_optimizer_state(optimizer, device)
+    replay.clear()
+    replay.extend(payload.get("replay", []))
+    if payload.get("numpy_rng_state"):
+        rng.bit_generator.state = payload["numpy_rng_state"]
+    if payload.get("python_rng_state"):
+        random.setstate(payload["python_rng_state"])
+    if payload.get("torch_rng_state") is not None:
+        torch.set_rng_state(payload["torch_rng_state"])
+    return int(payload.get("iteration", 0))
+
+
+def resolve_resume_path(value, output, rank):
+    if not value:
+        return None
+    candidate = Path(value)
+    if candidate.is_dir():
+        checkpoints = sorted(candidate.glob("checkpoint_*.pt"))
+        if not checkpoints:
+            raise FileNotFoundError(f"no checkpoints found in {candidate}")
+        candidate = checkpoints[-1]
+    if not candidate.exists():
+        raise FileNotFoundError(candidate)
+    return candidate
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument(
+        "--resume",
+        default=None,
+        help="checkpoint file or run directory to resume from",
+    )
     args = parser.parse_args()
     cfg = load_config(args.config)
 
@@ -169,10 +254,25 @@ def main():
         output.mkdir(parents=True, exist_ok=True)
         output.joinpath("config.json").write_text(json.dumps(cfg, indent=2))
     runtime.rendezvous("train-start")
+    resume_path = resolve_resume_path(args.resume, output, rank)
+    start_iteration = 0
+    if resume_path:
+        start_iteration = load_checkpoint(
+            model, optimizer, replay, rng, resume_path, rank, device
+        )
+        runtime.rendezvous("checkpoint-loaded")
     started = time.time()
     deadline = started + cfg["budget_s"]
     records = []
-    for iteration in range(cfg["iterations"]):
+    if rank == 0 and resume_path:
+        metrics_path = output / "metrics.jsonl"
+        if metrics_path.exists():
+            records = [
+                json.loads(line)
+                for line in metrics_path.read_text().splitlines()
+                if line.strip()
+            ]
+    for iteration in range(start_iteration, cfg["iterations"]):
         if time.time() >= deadline:
             break
         games = collect_games(model, runtime, rules, cfg, rng, cfg["games_per_iter"], deadline)
@@ -199,7 +299,16 @@ def main():
             records.append(record)
             with output.joinpath("metrics.jsonl").open("a") as stream:
                 stream.write(json.dumps(record) + "\n")
-            save_checkpoint(model, output / f"checkpoint_{iteration + 1:03d}.pt")
+        save_checkpoint(
+            model,
+            optimizer,
+            replay,
+            rng,
+            output / f"checkpoint_{iteration + 1:03d}.pt",
+            iteration + 1,
+            rank,
+        )
+        if rank == 0:
             print(json.dumps(record), flush=True)
         runtime.rendezvous(f"iteration-{iteration + 1}")
     runtime.rendezvous("train-complete")

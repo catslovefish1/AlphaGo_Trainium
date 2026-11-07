@@ -1,0 +1,15 @@
+{
+  "world": 64,
+  "batch_count": 8,
+  "batch_size": 2,
+  "shape": [
+    2,
+    4,
+    9,
+    9
+  ],
+  "sequential_s": 0.028120302129536867,
+  "pipelined_s": 0.02717227814719081,
+  "speedup": 1.03488938164149,
+  "all_reduce_1024_float32_s": 0.0002448759041726589
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "batch": 64,
+  "compile_seconds": 9.242753267288208,
+  "artifact": "/home/ralph/zhiwei_wang/AlphaGo_Trainium/runs/16525/native_neff/policy_value_neff.pt",
+  "compiler_workdir": "/home/ralph/zhiwei_wang/AlphaGo_Trainium/runs/16525/native_neff/compiler",
+  "backend": "torch_neuronx.trace",
+  "fused_graph": "neuron::forward"
+}
