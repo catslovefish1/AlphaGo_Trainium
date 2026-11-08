@@ -1,0 +1,60 @@
+{
+  "batch_size": 512,
+  "mfu_exit_code": 0,
+  "overlap_exit_code": 0,
+  "wall_time_s": 34.50133562088013,
+  "stable": true,
+  "mfu_probe": {
+    "world": 64,
+    "size": 9,
+    "channels": 64,
+    "blocks": 6,
+    "batch_size": 512,
+    "warmup": 2,
+    "steps": 5,
+    "initial_step_s": 0.01348876953125,
+    "steady_step_s": 0.052978515625,
+    "steady_step_samples_s": [
+      0.1988132579717785,
+      0.019103191094473004,
+      0.013678923016414046,
+      0.011309689842164516,
+      0.014579756185412407
+    ],
+    "samples_per_s_aggregate": 618514.8755760369,
+    "estimated_training_flops_per_rank": 110858035200,
+    "analytic_aggregate_tflops": 133.92059345377328,
+    "peak_bf16_tflops_reference": 10700.0,
+    "analytic_utilization_proxy_percent": 1.2515943313436755,
+    "mfu_basis": "timing proxy with an analytic 3x forward FLOPs estimate; exact MFU requires Neuron Explorer model_flops"
+  },
+  "overlap_probe": {
+    "world": 64,
+    "elements": 165888,
+    "host_prepare": {
+      "mean_ms": 2.5062700733542442,
+      "p50_ms": 2.388239139690995,
+      "p95_ms": 2.7830219361931086,
+      "samples": 5
+    },
+    "host_to_device": {
+      "mean_ms": 1.1235205922275782,
+      "p50_ms": 1.077685970813036,
+      "p95_ms": 1.3656185939908028,
+      "samples": 5
+    },
+    "all_reduce": {
+      "mean_ms": 2.568778209388256,
+      "p50_ms": 2.7234021108597517,
+      "p95_ms": 2.938223769888282,
+      "samples": 5
+    },
+    "pipeline_proxy": {
+      "sequential_mean_ms": 3.6922988016158342,
+      "lower_bound_mean_ms": 2.568778209388256,
+      "headroom_ms": 1.1235205922275782,
+      "basis": "max(host-to-device, all-reduce) lower bound; validate true overlap with a device timeline"
+    }
+  },
+  "monitor_peak_neuron_device_bytes": 508025092
+}

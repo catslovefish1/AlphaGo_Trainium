@@ -23,3 +23,16 @@ value emitted by `neuron-monitor`. It records observed runtime device bytes
 and does not claim a full physical-HBM capacity percentage. Raw monitor logs
 remain on trn09 because they are large. Compact MFU and overlap JSON files are
 in `docs/results/16564_hbm_batch/`.
+
+The warmed rerun used two warmup steps and five measured steps after the
+compiler graphs were already available.
+
+| batch | warmed steady step (s) | warmed aggregate samples/s | all-reduce (ms) | host→device (ms) | peak runtime bytes |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 256 | 0.05005 | 327,360 | 1.943 | 0.600 | 265,384,734 |
+| 512 | 0.05298 | 618,515 | 2.569 | 1.124 | 508,025,092 |
+
+The tuned 9x9 continuation uses batch 512 with two optimizer steps per
+iteration. The warmed data favors batch 512 for accelerator throughput while
+the recorded runtime-memory value remains small relative to the node's HBM
+capacity.
