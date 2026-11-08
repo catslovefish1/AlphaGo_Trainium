@@ -18,6 +18,10 @@ Checkpoint 045 was tested against KataGo for four games at each setting. It won 
 
 Slurm job 16580 continued from checkpoint 045 and reached checkpoint 050 after 87 minutes. Policy loss reached 3.140625 at iteration 50 and 3.03125 at iteration 52. Checkpoint 050 lost all four games at 1 visit, all four at 8 visits, and all four at 32 visits against KataGo.
 
+## Checkpoint 055 strength ladder
+
+Slurm job 16584 continued from checkpoint 050 and reached checkpoint 055. Policy loss moved from 2.875 at iteration 51 to 2.484375 at iteration 57. Checkpoint 055 lost all four games at 1 visit, all four at 8 visits, and all four at 32 visits against KataGo.
+
 ## Barrier comparison
 
 Slurm job 16574 repeated the continuation from checkpoint 040 with `optimizer_barrier=true`. It reached iteration 48 within the short 30-minute walltime. Policy loss moved from 3.765625 at iteration 41 to 3.59375 at iteration 48. After the compile boundary, iteration time was about 245 seconds. The barrier-on path reached iteration 43 in 411 seconds and iteration 44 in 657 seconds, compared with 722 seconds and 1,399 seconds on the barrier-off continuation. Neither short run reached checkpoint 050.
