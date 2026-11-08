@@ -8,6 +8,10 @@ The run resumed from checkpoint 030 and reached checkpoint 040 before the 30-min
 
 A second continuation from checkpoint 040 ran as Slurm job 16573. It reached iteration 45 at world size 64. Policy loss moved from 3.75 at iteration 41 to 3.609375 at iteration 45. Value loss was 0.6758 at iteration 45 after the compile-boundary spike. The job ended cleanly after 36 minutes with no checkpoint 050 because four graph transitions consumed the short budget. Checkpoint 040 remains the latest usable synchronized weight file.
 
+## Barrier comparison
+
+Slurm job 16574 repeated the continuation from checkpoint 040 with `optimizer_barrier=true`. It reached iteration 48 within the short 30-minute walltime. Policy loss moved from 3.765625 at iteration 41 to 3.59375 at iteration 48. After the compile boundary, iteration time was about 245 seconds. The barrier-on path reached iteration 43 in 411 seconds and iteration 44 in 657 seconds, compared with 722 seconds and 1,399 seconds on the barrier-off continuation. Neither short run reached checkpoint 050.
+
 ## Public-engine strength check
 
 Checkpoint 040 was tested against the official KataGo 9x9 network with two games per setting.
