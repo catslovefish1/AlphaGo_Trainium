@@ -79,9 +79,10 @@ def numeric_memory_fields(value, path=""):
             child = f"{path}.{key}" if path else key
             if isinstance(item, (int, float)) and not isinstance(item, bool):
                 low = child.lower()
-                if any(word in low for word in ("hbm", "sbuf", "psum", "neuroncore_memory")):
+                if any(word in low for word in ("hbm", "sbuf", "psum", "neuroncore_memory", "neuron_device")):
                     if math.isfinite(float(item)):
-                        found.append((child, item))
+                        if item:
+                            found.append((child, item))
             else:
                 found.extend(numeric_memory_fields(item, child))
     elif isinstance(value, list):
@@ -101,6 +102,10 @@ fields = numeric_memory_fields(samples)
 result["monitor_samples"] = len(samples)
 result["monitor_memory_fields"] = fields
 result["monitor_peak_numeric_memory"] = max((float(value) for _, value in fields), default=None)
+result["monitor_peak_neuron_device_bytes"] = max(
+    (float(value) for path, value in fields if path.endswith(".neuron_device")),
+    default=None,
+)
 (out / "batch_result.json").write_text(json.dumps(result, indent=2) + "\n")
 print(json.dumps(result), flush=True)
 PY

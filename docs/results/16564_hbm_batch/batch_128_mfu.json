@@ -1,0 +1,22 @@
+{
+  "world": 64,
+  "size": 9,
+  "channels": 64,
+  "blocks": 6,
+  "batch_size": 128,
+  "warmup": 0,
+  "steps": 3,
+  "initial_step_s": 0.68359375,
+  "steady_step_s": 0.1923828125,
+  "steady_step_samples_s": [
+    0.41921774903312325,
+    0.013825860107317567,
+    0.25262332800775766
+  ],
+  "samples_per_s_aggregate": 42581.766497461926,
+  "estimated_training_flops_per_rank": 27714508800,
+  "analytic_aggregate_tflops": 9.219787049323857,
+  "peak_bf16_tflops_reference": 10700.0,
+  "analytic_utilization_proxy_percent": 0.08616623410583045,
+  "mfu_basis": "timing proxy with an analytic 3x forward FLOPs estimate; exact MFU requires Neuron Explorer model_flops"
+}
