@@ -1,0 +1,5 @@
+{"iteration":41,"world":64,"policy_loss":3.75,"value_loss":0.1103515625,"replay_global":10240,"elapsed_s":15.4248}
+{"iteration":42,"world":64,"policy_loss":3.71875,"value_loss":0.263671875,"replay_global":19584,"elapsed_s":31.0446}
+{"iteration":43,"world":64,"policy_loss":3.65625,"value_loss":0.7890625,"replay_global":24704,"elapsed_s":722.4968}
+{"iteration":44,"world":64,"policy_loss":3.625,"value_loss":0.734375,"replay_global":30848,"elapsed_s":1399.1760}
+{"iteration":45,"world":64,"policy_loss":3.609375,"value_loss":0.67578125,"replay_global":37888,"elapsed_s":2070.3289}

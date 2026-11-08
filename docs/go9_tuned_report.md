@@ -6,7 +6,7 @@ The tuned continuation used all 64 logical NeuronCores on trn09 with the XLA bac
 
 The run resumed from checkpoint 030 and reached checkpoint 040 before the 30-minute walltime. Across iterations 31 to 42, policy loss moved from 3.96875 to 3.875 and value loss moved from 0.1465 to 0.1416. The replay buffer grew from 8,128 to 115,200 positions. The captured point at iteration 42 used world size 64.
 
-A second continuation from checkpoint 040 is running as Slurm job 16573. It has produced iterations 41 and 42 with policy loss 3.75 and 3.71875. The next graph entered a Neuron compile that was still active at the time of this report.
+A second continuation from checkpoint 040 ran as Slurm job 16573. It reached iteration 45 at world size 64. Policy loss moved from 3.75 at iteration 41 to 3.609375 at iteration 45. Value loss was 0.6758 at iteration 45 after the compile-boundary spike. The job ended cleanly after 36 minutes with no checkpoint 050 because four graph transitions consumed the short budget. Checkpoint 040 remains the latest usable synchronized weight file.
 
 ## Public-engine strength check
 

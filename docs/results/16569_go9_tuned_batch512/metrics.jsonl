@@ -10,3 +10,5 @@
 {"iteration":40,"world":64,"policy_loss":3.90625,"value_loss":0.1484375,"replay_global":96256,"elapsed_s":483.9142}
 {"iteration":41,"world":64,"policy_loss":3.890625,"value_loss":0.1474609375,"replay_global":105472,"elapsed_s":496.1630}
 {"iteration":42,"world":64,"policy_loss":3.875,"value_loss":0.1416015625,"replay_global":115200,"elapsed_s":508.4250}
+{"iteration":41,"world":64,"policy_loss":3.890625,"value_loss":0.1474609375,"replay_global":105472,"elapsed_s":496.1630}
+{"iteration":42,"world":64,"policy_loss":3.875,"value_loss":0.1416015625,"replay_global":115200,"elapsed_s":508.4250}
