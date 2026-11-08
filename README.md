@@ -3,6 +3,9 @@
 A short, full-node Trainium2 smoke test for AlphaZero-style learning on 9x9 Go.
 The model starts from random weights and trains only on self-play trajectories.
 
+The latest allocation summary and next-run gates are in
+[`docs/current_status.md`](docs/current_status.md).
+
 ## Project layout
 
 - `alphago/` contains the rules, MCTS, model, distributed runtime, training loop, GTP adapter, and probes.
