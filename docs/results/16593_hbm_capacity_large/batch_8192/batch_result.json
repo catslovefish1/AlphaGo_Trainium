@@ -1,0 +1,1 @@
+{"batch_size":8192,"stable":true,"peak_neuron_device_bytes":6031384286,"warmed_samples_per_s":1931103.2,"host_to_device_mean_ms":10.1053,"all_reduce_mean_ms":16.7246,"analytic_utilization_proxy_percent":0.8035}

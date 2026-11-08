@@ -1,0 +1,1 @@
+{"world":64,"batch_size":4096,"sequential_mean_ms":34.2935,"pipelined_mean_ms":{"1":30.6250,"2":29.9135,"4":29.7212},"speedup_by_depth":{"1":1.1198,"2":1.1464,"4":1.1538}}

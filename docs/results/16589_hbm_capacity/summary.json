@@ -1,0 +1,10 @@
+{
+  "world": 64,
+  "points": [
+    {"batch_size":512,"stable":true,"peak_neuron_device_bytes":386723376,"warmed_samples_per_s":2131149.0,"host_to_device_mean_ms":0.7177,"all_reduce_mean_ms":2.7468},
+    {"batch_size":1024,"stable":true,"peak_neuron_device_bytes":903833732,"warmed_samples_per_s":3316136.7,"host_to_device_mean_ms":1.1920,"all_reduce_mean_ms":2.9720},
+    {"batch_size":2048,"stable":true,"peak_neuron_device_bytes":1712677124,"warmed_samples_per_s":3646350.7,"host_to_device_mean_ms":2.9386,"all_reduce_mean_ms":5.4829},
+    {"batch_size":4096,"stable":true,"peak_neuron_device_bytes":3475645188,"warmed_samples_per_s":3539826.5,"host_to_device_mean_ms":6.4231,"all_reduce_mean_ms":10.8223}
+  ],
+  "warmed_throughput_method": "mean of steady samples excluding the first compile-contaminated sample"
+}
