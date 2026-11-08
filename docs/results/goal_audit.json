@@ -1,0 +1,62 @@
+{
+  "gates": [
+    {
+      "detail": "9x9 CPU MCTS games and 19x19 action shape",
+      "evidence": "docs/results/local_cpu_validation.json",
+      "name": "rules_and_cpu_mcts",
+      "status": "verified"
+    },
+    {
+      "detail": "empirical shape and timing proxy results",
+      "evidence": "docs/nn_mfu_report.md",
+      "name": "basic_mfu_proxy",
+      "status": "verified"
+    },
+    {
+      "detail": "requires populated HLO model_flops",
+      "evidence": "docs/results/16559_exact_mfu_hlo/summary.json",
+      "name": "exact_hlo_mfu",
+      "status": "pending"
+    },
+    {
+      "detail": "CPU producer and Neuron consumer queue-depth probe",
+      "evidence": "docs/results/16595_async_pipeline/async_pipeline.json",
+      "name": "async_pipeline",
+      "status": "verified"
+    },
+    {
+      "detail": "64-rank batch capacity sweep",
+      "evidence": "docs/results/16589_hbm_capacity/summary.json",
+      "name": "hbm_capacity",
+      "status": "verified"
+    },
+    {
+      "detail": "latest KataGo ladder result 0/12 wins",
+      "evidence": [
+        "docs/results/16585_go9_ckpt055_vweak/match.json",
+        "docs/results/16586_go9_ckpt055_weak/match.json",
+        "docs/results/16587_go9_ckpt055_ref/match.json"
+      ],
+      "name": "public_engine_strength",
+      "status": "pending"
+    },
+    {
+      "detail": "19x19 shape and batch sweep",
+      "evidence": "docs/go19_mfu_report.md",
+      "name": "19x19_preparation",
+      "status": "verified"
+    },
+    {
+      "detail": "requires a sustained run with periodic checkpoint retrieval",
+      "evidence": "docs/results/16562_go19_train_smoke",
+      "name": "continuous_19x19_training",
+      "status": "pending"
+    }
+  ],
+  "overall": "incomplete",
+  "pending_gates": [
+    "exact_hlo_mfu",
+    "public_engine_strength",
+    "continuous_19x19_training"
+  ]
+}

@@ -2,6 +2,9 @@
 
 Updated 2026-11-08 after the trn09 booking ended.
 
+The machine-readable requirement audit is in `docs/results/goal_audit.json` and
+can be regenerated with `python3 -m alphago.goal_audit`.
+
 ## Allocation
 
 The trn09 instance is no longer available at the infrastructure level. No new
