@@ -1,10 +1,11 @@
 #!/bin/bash
 set -euo pipefail
-NODE=${1:?usage: stage_and_submit.sh <node> <config> [time] [tag] [resume]}
+NODE=${1:?usage: stage_and_submit.sh <node> <config> [time] [tag] [resume] [async_nrt]}
 CONFIG=${2:?usage: stage_and_submit.sh <node> <config> [time] [tag] [resume]}
 TIME=${3:-00:30:00}
 TAG=${4:-go9_smoke}
 RESUME=${5:-}
+ASYNC_NRT=${6:-0}
 WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium
 CODE_WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium_git
 REPO_URL=https://github.com/catslovefish1/AlphaGo_Trainium.git
@@ -20,7 +21,7 @@ if [ -n "$RESUME" ]; then
     rsync -a "$RESUME" "$ADDR:$RESUME"
   fi
 fi
-EXPORT="ALL,CONFIG=$CONFIG,TAG=$TAG"
+EXPORT="ALL,CONFIG=$CONFIG,TAG=$TAG,ASYNC_NRT=$ASYNC_NRT"
 if [ -n "$RESUME" ]; then
   EXPORT="$EXPORT,RESUME=$RESUME"
 fi

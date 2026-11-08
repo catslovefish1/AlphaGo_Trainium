@@ -17,6 +17,9 @@ export NEURON_LOGICAL_NC_CONFIG=2
 export NEURON_RT_NUM_CORES=64
 export OMP_NUM_THREADS=1
 export XLA_USE_BF16=1
+if [ "${ASYNC_NRT:-0}" = "1" ]; then
+  export TORCH_NEURONX_ENABLE_ASYNC_NRT=1
+fi
 
 cd "$CODE_WS"
 mkdir -p "$WS/runs/$SLURM_JOB_ID" "$WS/logs"

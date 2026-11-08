@@ -1,10 +1,11 @@
 #!/bin/bash
 set -euo pipefail
-NODE=${1:?usage: stage_go19_train.sh <node> <config> [time] [tag] [checkpoint]}
+NODE=${1:?usage: stage_go19_train.sh <node> <config> [time] [tag] [checkpoint] [async_nrt]}
 CONFIG=${2:?usage: stage_go19_train.sh <node> <config> [time] [tag] [checkpoint]}
 TIME=${3:-06:00:00}
 TAG=${4:-go19_train}
 RESUME=${5:-}
+ASYNC_NRT=${6:-0}
 WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium
 CODE_WS=/home/ralph/zhiwei_wang/AlphaGo_Trainium_git
 REPO_URL=https://github.com/catslovefish1/AlphaGo_Trainium.git
@@ -20,6 +21,6 @@ if [ -n "$RESUME" ]; then
     rsync -a "$RESUME" "$ADDR:$RESUME"
   fi
 fi
-EXPORT="ALL,CONFIG=$CONFIG,TAG=$TAG,RESUME=$RESUME"
+EXPORT="ALL,CONFIG=$CONFIG,TAG=$TAG,RESUME=$RESUME,ASYNC_NRT=$ASYNC_NRT"
 JOB=$(ssh -o BatchMode=yes "$ADDR" "cd '$CODE_WS' && sbatch --parsable --partition=compute_fullnode --nodelist='$NODE' --gres=neuron:16 --exclusive --time='$TIME' --job-name='zhiwei_${TAG}' --export=$EXPORT scripts/go_train_only.sbatch")
 echo "$JOB"
