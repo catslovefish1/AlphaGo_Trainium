@@ -11,26 +11,52 @@ ADDR=$(scontrol show node "$NODE" | grep -o 'NodeAddr=[^ ]*' | cut -d= -f2)
 SRC="$WS/runs/$JOBID/$TAG"
 mkdir -p "$DEST"
 
-sync_once() {
-  ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -d '$SRC'" || return 0
-  for name in config.json metrics.jsonl summary.json; do
-    if ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -f '$SRC/$name'"; then
-      rsync -a --partial "$ADDR:$SRC/$name" "$DEST/$name"
-    fi
-  done
-  ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" \
-    "find '$SRC' -maxdepth 1 -type f -name 'checkpoint_*.pt' -printf '%f\\n' | sort" \
-    | while read -r name; do
-        [ -n "$name" ] || continue
-        rsync -a --partial "$ADDR:$SRC/$name" "$DEST/$name"
-      done
-  if ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -f '/home/ralph/zhiwei_wang/logs/$JOBID.out'"; then
-    rsync -a --partial "$ADDR:/home/ralph/zhiwei_wang/logs/$JOBID.out" "$DEST/$JOBID.out"
+copy_if_present() {
+  local name=$1
+  if ! ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -f '$SRC/$name'"; then
+    return 0
+  fi
+  if ! rsync -a --partial \
+    -e 'ssh -o BatchMode=yes -o ConnectTimeout=10' \
+    "$ADDR:$SRC/$name" "$DEST/$name"; then
+    printf 'warning: could not copy %s\n' "$name" >&2
+    return 1
   fi
 }
 
+sync_once() {
+  if ! ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -d '$SRC'"; then
+    printf 'warning: run directory is unavailable on %s\n' "$ADDR" >&2
+    return 1
+  fi
+  local failed=0
+  for name in config.json metrics.jsonl summary.json; do
+    copy_if_present "$name" || failed=1
+  done
+  local checkpoints
+  if checkpoints=$(ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" \
+    "find '$SRC' -maxdepth 1 -type f -name 'checkpoint_*.pt' -printf '%f\\n' | sort"); then
+    while read -r name; do
+      [ -n "$name" ] || continue
+      copy_if_present "$name" || failed=1
+    done <<< "$checkpoints"
+  else
+    printf 'warning: could not list checkpoints\n' >&2
+    failed=1
+  fi
+  if ssh -o BatchMode=yes -o ConnectTimeout=10 "$ADDR" "test -f '/home/ralph/zhiwei_wang/logs/$JOBID.out'"; then
+    if ! rsync -a --partial \
+      -e 'ssh -o BatchMode=yes -o ConnectTimeout=10' \
+      "$ADDR:/home/ralph/zhiwei_wang/logs/$JOBID.out" "$DEST/$JOBID.out"; then
+      printf 'warning: could not copy Slurm log\n' >&2
+      failed=1
+    fi
+  fi
+  return "$failed"
+}
+
 while true; do
-  sync_once
+  sync_once || true
   STATE=$(squeue -h -j "$JOBID" -o '%T' 2>/dev/null || true)
   if [ -z "$STATE" ]; then
     ACCOUNTING=$(sacct -n -X -j "$JOBID" -o State 2>/dev/null | tr -d ' ' | head -1 || true)
@@ -42,5 +68,5 @@ while true; do
   fi
   sleep "$INTERVAL"
 done
-sync_once
+sync_once || true
 printf '%s\n' "$DEST"
