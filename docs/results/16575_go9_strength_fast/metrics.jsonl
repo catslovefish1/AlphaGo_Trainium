@@ -1,0 +1,7 @@
+{"iteration":41,"world":64,"games_global":138,"replay_global":9408,"policy_loss":3.625,"value_loss":0.53515625,"random_wins_as_black":0,"random_games":256,"elapsed_s":441.4068}
+{"iteration":42,"world":64,"games_global":137,"replay_global":15680,"policy_loss":3.515625,"value_loss":0.58203125,"random_wins_as_black":0,"random_games":256,"elapsed_s":1395.2090}
+{"iteration":43,"world":64,"games_global":192,"replay_global":22016,"policy_loss":3.4375,"value_loss":0.66796875,"random_wins_as_black":0,"random_games":256,"elapsed_s":2349.3589}
+{"iteration":44,"world":64,"games_global":328,"replay_global":32512,"policy_loss":3.359375,"value_loss":0.734375,"random_wins_as_black":0,"random_games":256,"elapsed_s":3302.8001}
+{"iteration":45,"world":64,"games_global":183,"replay_global":38912,"policy_loss":3.328125,"value_loss":0.5703125,"random_wins_as_black":0,"random_games":256,"elapsed_s":4322.2036}
+{"iteration":46,"world":64,"games_global":169,"replay_global":45824,"policy_loss":3.375,"value_loss":0.412109375,"random_wins_as_black":0,"random_games":256,"elapsed_s":5394.5271}
+{"iteration":47,"world":64,"games_global":188,"replay_global":51968,"policy_loss":3.390625,"value_loss":0.37890625,"random_wins_as_black":0,"random_games":256,"elapsed_s":6477.7591}
