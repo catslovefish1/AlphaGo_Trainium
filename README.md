@@ -193,6 +193,17 @@ job is active. It retrieves metrics, summaries, configuration, and rank-zero
 checkpoints into a head01 collection directory. The node remains the source of
 the live run and the large checkpoint files stay outside GitHub.
 
+For a 19x19 run, stage the job and keep the collector attached to its Slurm
+state with one command.
+
+```bash
+scripts/stage_go19_train_and_sync.sh trn09 configs/go19_train_smoke.json \
+  06:00:00 go19_train "" 1 1800
+```
+
+The wrapper waits for the job to reach a terminal state and leaves collected
+weights under `checkpoint_sync/` on head01.
+
 ## Host and collective timing probe
 
 After a smoke allocation, run `python -m alphago.overlap_probe --out runs/overlap_probe` to measure host batch preparation, host-to-device transfer, and 64-rank all-reduce latency. The JSON report also records a pipeline lower bound derived from the measured transfer and collective times. It is a timing proxy that needs a device timeline for a true overlap claim.
