@@ -10,6 +10,10 @@ for the next allocation and does not claim that an unrun experiment completed.
 
 ## Verified results
 
+- The CPU-only validation completed two 9x9 MCTS self-play games with four
+  simulations per move, checked every selected move against the rules, and
+  validated the 19x19 action shape. The JSON evidence is in
+  `docs/results/local_cpu_validation.json`.
 - The 64-rank 9x9 path initialized, synchronized, trained, and wrote
   checkpoints through checkpoint 055.
 - Policy and value losses moved downward during the from-scratch and tuned

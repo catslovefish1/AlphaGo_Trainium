@@ -1,0 +1,1 @@
+{"mcts": {"games": [{"moves": 162, "winner": 1}, {"moves": 162, "winner": 1}], "simulations": 4}, "result": "passed", "rules": {"19x19": true, "9x9": true}}
