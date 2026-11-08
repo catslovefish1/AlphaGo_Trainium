@@ -18,9 +18,10 @@ The latest allocation summary and next-run gates are in
 
 ```bash
 python3 -m alphago.test_core
+python3 -m alphago.test_cpu_paths
 ```
 
-The local core test requires only the Python standard library. Torch checks run on head01 in the Neuron environment.
+The local rules and CPU-MCTS checks run when NumPy is installed and report an explicit skip otherwise. Torch checks run on head01 in the Neuron environment.
 
 ## Full-node smoke run
 
