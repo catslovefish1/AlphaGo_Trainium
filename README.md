@@ -20,6 +20,7 @@ The latest allocation summary and next-run gates are in
 python3 -m alphago.test_core
 python3 -m alphago.test_cpu_paths
 python3 -m alphago.test_mfu_report
+python3 -m alphago.test_gtp_protocol
 python3 -m alphago.goal_audit
 ```
 
