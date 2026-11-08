@@ -112,6 +112,18 @@ scripts/stage_external_match.sh trn09 configs/go9_arena.json \
 Pass an eighth argument to set the matched KataGo visits. Use
 `configs/go9_arena_fast.json` and `8` visits for a short protocol check.
 
+Run the three-level public-engine ladder in one allocation to avoid repeating
+node staging and engine downloads.
+
+```bash
+scripts/stage_external_ladder.sh trn09 configs/go9_arena_fast.json \
+  /home/ralph/zhiwei_wang/checkpoint_sync/<run>/checkpoint_055.pt \
+  00:30:00 go9_katago_ladder 4 "1 8 32"
+```
+
+The job writes `match_1.json`, `match_8.json`, and `match_32.json` under its
+run directory. Use `scripts/fetch_results.sh` to retrieve the complete ladder.
+
 Training launchers also pull the public main branch directly into
 `/home/ralph/zhiwei_wang/AlphaGo_Trainium_git` on the allocated node. The
 working clone keeps run data and checkpoints in the separate
