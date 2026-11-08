@@ -24,10 +24,10 @@ def ordinal():
     return int(xm.get_local_ordinal())
 
 
-def optimizer_step(optimizer):
+def optimizer_step(optimizer, barrier=True):
     import torch_xla.core.xla_model as xm
 
-    xm.optimizer_step(optimizer, barrier=True)
+    xm.optimizer_step(optimizer, barrier=barrier)
 
 
 def mark_step():

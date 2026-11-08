@@ -86,6 +86,7 @@ def train_steps(model, optimizer, runtime, replay, cfg, size, rng):
     values = np.zeros(batch_size, dtype=np.float32)
     policy_losses = []
     value_losses = []
+    optimizer_barrier = bool(cfg.get("optimizer_barrier", True))
     for _ in range(cfg["train_steps_per_iter"]):
         for row, index in enumerate(rng.integers(0, len(replay), batch_size)):
             observation, policy, value = replay[int(index)]
@@ -99,10 +100,13 @@ def train_steps(model, optimizer, runtime, replay, cfg, size, rng):
         policy_loss = -(target_policy * functional.log_softmax(logits, dim=1)).sum(1).mean()
         value_loss = functional.mse_loss(prediction, target_value)
         (policy_loss + value_loss).backward()
-        runtime.optimizer_step(optimizer)
-        policy_losses.append(float(policy_loss.detach().cpu()))
-        value_losses.append(float(value_loss.detach().cpu()))
-    return float(np.mean(policy_losses)), float(np.mean(value_losses))
+        runtime.optimizer_step(optimizer, barrier=optimizer_barrier)
+        policy_losses.append(policy_loss.detach())
+        value_losses.append(value_loss.detach())
+    runtime.mark_step()
+    policy_mean = torch.stack(policy_losses).mean().cpu().item()
+    value_mean = torch.stack(value_losses).mean().cpu().item()
+    return float(policy_mean), float(value_mean)
 
 
 def eval_random(model, runtime, rules, cfg, seed, games):
