@@ -182,3 +182,14 @@ The smoke run is a learning-system test rather than a strength claim. It checks 
 
 The retired prototype completed two 9x9 runs on a single debug node. The first completed 1,234 games but collapsed to early passing. The second used an early-pass guard and reached 12/50 wins against random. The new smoke run checks whether all 64 logical cores can produce a synchronized learning curve.
 
+
+## Next 9x9 performance continuation
+
+The measured 64-rank capacity sweep selected `configs/go9_perf_train_b2048.json`. To resume from the latest head01 checkpoint with the async Neuron runtime path enabled, pass `1` as the sixth staging argument.
+
+```bash
+bash scripts/stage_and_submit.sh trn09 configs/go9_perf_train_b2048.json 02:00:00 go9_perf_b2048 /home/ralph/zhiwei_wang/checkpoint_sync/16584_go9_strength_fast3/checkpoint_055.pt 1
+bash scripts/sync_checkpoints_loop.sh trn09 <jobid> go9_perf_b2048 1800
+```
+
+The fifth argument remains the checkpoint path. The sixth argument controls `TORCH_NEURONX_ENABLE_ASYNC_NRT`.
