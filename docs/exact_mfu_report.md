@@ -30,3 +30,8 @@ that the device profile and HLO graph were captured, but the SDK combination
 does not expose the requested HLO aggregate. The recorded instruction MFU,
 HFU, HBM, DMA, and tensor-engine fields remain valid. A later SDK-matched
 profile is required before claiming an HLO-based exact MFU percentage.
+
+`python -m alphago.mfu_report <summary.json>` now performs this gate without
+converting a zero-valued HLO field into an exact-MFU result. It emits the
+per-node timing and memory fields alongside the gate decision so CPU-side
+launch measurements can be joined with the device profile from the same run.

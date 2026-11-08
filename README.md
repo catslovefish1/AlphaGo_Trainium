@@ -19,6 +19,7 @@ The latest allocation summary and next-run gates are in
 ```bash
 python3 -m alphago.test_core
 python3 -m alphago.test_cpu_paths
+python3 -m alphago.test_mfu_report
 ```
 
 The local rules and CPU-MCTS checks run when NumPy is installed and report an explicit skip otherwise. Torch checks run on head01 in the Neuron environment.
@@ -155,6 +156,14 @@ scripts/stage_exact_mfu.sh trn09 00:10:00 exact_mfu
 Its summary uses HLO `model_flops` and `mfu_hlo_estimated_percent`. The system
 profile is enabled with the device profile so CPU launch and transfer intervals
 can be compared with HBM and tensor-engine activity.
+
+Normalize a retrieved Explorer summary before deciding whether the exact-MFU
+gate has passed.
+
+```bash
+python3 -m alphago.mfu_report runs/<jobid>/exact_mfu/summary.json \
+  --out runs/<jobid>/exact_mfu/normalized_summary.json
+```
 
 The 19x19 smoke-training configuration uses the best measured 64-channel,
 6-block candidate with batch size 32. It runs training only, which avoids
