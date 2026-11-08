@@ -31,7 +31,7 @@
       "status": "verified"
     },
     {
-      "detail": "latest KataGo ladder result 0/12 wins",
+      "detail": "latest checkpoint ladder 0/12 wins",
       "evidence": [
         "docs/results/16585_go9_ckpt055_vweak/match.json",
         "docs/results/16586_go9_ckpt055_weak/match.json",

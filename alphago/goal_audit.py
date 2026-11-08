@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 from .mfu_report import summarize as summarize_mfu
@@ -80,20 +81,37 @@ def audit(root):
         )
     )
 
-    strength_paths = [
-        root / "docs/results/16585_go9_ckpt055_vweak/match.json",
-        root / "docs/results/16586_go9_ckpt055_weak/match.json",
-        root / "docs/results/16587_go9_ckpt055_ref/match.json",
+    match_candidates = []
+    for path in (root / "docs/results").glob("*/match*.json"):
+        match = re.match(r"(\d+)_", path.parent.name)
+        if match:
+            payload = _read_json(path)
+            checkpoint = str(payload.get("checkpoint", ""))
+            checkpoint_match = re.search(r"checkpoint[_-](\d+)", checkpoint)
+            checkpoint_number = (
+                int(checkpoint_match.group(1)) if checkpoint_match else -1
+            )
+            match_candidates.append(
+                (checkpoint_number, int(match.group(1)), path, payload)
+            )
+    latest_checkpoint = max(
+        (checkpoint for checkpoint, _, _, _ in match_candidates), default=-1
+    )
+    strength_entries = [
+        entry for entry in match_candidates if entry[0] == latest_checkpoint
     ]
-    strength = [_read_json(path) for path in strength_paths if path.exists()]
+    strength_paths = [path for _, _, path, _ in strength_entries]
+    strength_paths.sort()
+    strength = [payload for _, _, _, payload in strength_entries]
     wins = sum(int(item.get("our_wins", 0)) for item in strength)
     games = sum(int(item.get("games", 0)) for item in strength)
+    evidence = [str(path.relative_to(root)) for path in strength_paths]
     gates.append(
         _gate(
             "public_engine_strength",
             "verified" if wins > 0 else "pending",
-            [str(path.relative_to(root)) for path in strength_paths],
-            f"latest KataGo ladder result {wins}/{games} wins",
+            evidence,
+            f"latest checkpoint ladder {wins}/{games} wins",
         )
     )
 
