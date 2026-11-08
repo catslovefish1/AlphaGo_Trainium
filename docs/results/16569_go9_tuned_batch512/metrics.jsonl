@@ -1,0 +1,12 @@
+{"iteration":31,"world":64,"policy_loss":3.96875,"value_loss":0.146484375,"replay_global":8128,"elapsed_s":199.3836}
+{"iteration":32,"world":64,"policy_loss":4.09375,"value_loss":0.298828125,"replay_global":19200,"elapsed_s":390.1869}
+{"iteration":33,"world":64,"policy_loss":4.0625,"value_loss":0.20703125,"replay_global":29056,"elapsed_s":401.2773}
+{"iteration":34,"world":64,"policy_loss":4.0625,"value_loss":0.1875,"replay_global":37376,"elapsed_s":412.7812}
+{"iteration":35,"world":64,"policy_loss":4.03125,"value_loss":0.1875,"replay_global":47104,"elapsed_s":424.7787}
+{"iteration":36,"world":64,"policy_loss":4.0,"value_loss":0.1728515625,"replay_global":56832,"elapsed_s":436.5558}
+{"iteration":37,"world":64,"policy_loss":3.96875,"value_loss":0.17578125,"replay_global":66048,"elapsed_s":447.8940}
+{"iteration":38,"world":64,"policy_loss":3.953125,"value_loss":0.162109375,"replay_global":75264,"elapsed_s":459.5952}
+{"iteration":39,"world":64,"policy_loss":3.921875,"value_loss":0.1513671875,"replay_global":86528,"elapsed_s":471.6555}
+{"iteration":40,"world":64,"policy_loss":3.90625,"value_loss":0.1484375,"replay_global":96256,"elapsed_s":483.9142}
+{"iteration":41,"world":64,"policy_loss":3.890625,"value_loss":0.1474609375,"replay_global":105472,"elapsed_s":496.1630}
+{"iteration":42,"world":64,"policy_loss":3.875,"value_loss":0.1416015625,"replay_global":115200,"elapsed_s":508.4250}
